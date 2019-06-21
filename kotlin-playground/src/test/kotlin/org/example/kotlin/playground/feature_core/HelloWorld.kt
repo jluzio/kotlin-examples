@@ -1,4 +1,4 @@
-package org.example.kotlin.playground
+package org.example.kotlin.playground.feature_core
 
 class HelloWorld
 

@@ -1,0 +1,7 @@
+> Using Maven
+https://kotlinlang.org/docs/reference/using-maven.html
+- Examples
+https://github.com/JetBrains/kotlin-examples
+https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip
+
+Kotlin: requires Maven 3.x

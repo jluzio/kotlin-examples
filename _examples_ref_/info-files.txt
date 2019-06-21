@@ -1,0 +1,3 @@
+kotlin-examples
+https://github.com/JetBrains/kotlin-examples
+https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip
