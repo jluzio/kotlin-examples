@@ -2,13 +2,13 @@ package org.example.kotlin.playground
 
 import org.junit.Test
 
-fun log(message: Any?) {
-    println(message)
-}
-
 class BasicSyntaxTest {
     fun sum(a: Int, b: Int) = a + b
     fun maxOf(a: Int, b: Int) = if (a > b) a else b
+
+    fun log(message: Any?) {
+        println(message)
+    }
 
     @Test
     fun test() {
@@ -160,3 +160,4 @@ class BasicSyntaxTest {
     }
 
 }
+
