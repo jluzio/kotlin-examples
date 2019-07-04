@@ -147,7 +147,7 @@ class IdiomsTest {
     }
 
     @Test
-    fun ifNotNullShorthand() {
+    fun if_not_null_shorthand() {
         val files = File("Test").listFiles()
         // If not null shorthand
         println(files?.size)
@@ -156,7 +156,7 @@ class IdiomsTest {
     }
 
     @Test
-    fun ifNullExecute() {
+    fun if_null_execute() {
         val values = mapOf("name" to "name of x", "not_email" to 6)
         try {
             val name = values["name"] ?: throw IllegalStateException("Name is missing!")
@@ -174,7 +174,7 @@ class IdiomsTest {
     }
 
     @Test
-    fun firstOfPossibleEmptyCollection() {
+    fun first_of_possible_empty_collection() {
         var emails : Collection<String>
         emails = listOf()
         println("value: '${emails.firstOrNull() ?: ""}'")
@@ -195,6 +195,55 @@ class IdiomsTest {
     @Test
     fun map_nullable_value_if_not_null() {
         // TODO
+        val objNull = null
+        val objNotNull = "test"
+
+        println(objNull?.let { v -> "not null: $v" })
+        println(objNotNull?.let { v -> "not null: $v" })
     }
 
+    @Test
+    fun transform() {
+        fun transformFn(color: String): Int {
+            return when (color) {
+                "Red" -> 0
+                "Green" -> 1
+                "Blue" -> 2
+                else -> throw IllegalArgumentException("Invalid color param value")
+            }
+        }
+
+        println(transformFn("Green"))
+        println(transformFn("Blue"))
+    }
+
+    @Test
+    fun assignment_exprs() {
+        val try_result = try {
+            Math.random()
+        } catch (e: ArithmeticException) {
+            throw IllegalStateException(e)
+        }
+        println(try_result)
+
+        for (i in 1..3) {
+            val if_target = (Math.random() * 5).toInt()
+            val if_result = if (if_target == 1) {
+                "one"
+            } else if (if_target == 2) {
+                "two"
+            } else {
+                "other"
+            }
+            println(if_result)
+        }
+    }
+
+    @Test
+    fun builder_style_usage_of_methods_that_return_unit() {
+        fun arrayOfMinusOnes(size: Int): IntArray {
+            return IntArray(size).apply { fill(-1) }
+        }
+        println(arrayOfMinusOnes(5).asList())
+    }
 }
