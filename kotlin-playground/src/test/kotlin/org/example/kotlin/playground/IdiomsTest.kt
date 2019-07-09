@@ -3,6 +3,8 @@ package org.example.kotlin.playground
 import org.junit.Assert
 import org.junit.Test
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Paths
 import java.time.LocalDate
 
 class IdiomsTest {
@@ -245,5 +247,58 @@ class IdiomsTest {
             return IntArray(size).apply { fill(-1) }
         }
         println(arrayOfMinusOnes(5).asList())
+    }
+
+    @Test
+    fun single_expression_functions() {
+        fun getAnswer() = 42
+        println(getAnswer())
+
+        fun transform_ex(color: String): Int = when (color) {
+            "Red" -> 0
+            "Green" -> 1
+            "Blue" -> 2
+            else -> throw IllegalArgumentException("Invalid color param value")
+        }
+        println(transform_ex("Red"))
+    }
+
+    @Test
+    fun try_resources() {
+        val stream = Files.newInputStream(Paths.get("./build.gradle.kts"))
+        stream.buffered().reader().use { reader ->
+            println(reader.readText())
+        }
+    }
+
+    @Test
+    fun convenient_form_generic_function_requires_generic_type_info() {
+        // considering other dependencies
+        //  public final class Gson {
+        //     ...
+        //     public <T> T fromJson(JsonElement json, Class<T> classOfT) throws JsonSyntaxException {
+        //     ...
+
+        // this is what we want
+        // inline fun <reified T: Any> Gson.fromJson(json: JsonElement): T = this.fromJson(json, T::class.java)
+        println("TODO: complete test")
+    }
+
+    @Test
+    fun consume_nullable_boolean() {
+        val b: Boolean? = null
+        if (b == true) {
+            println("bool is true")
+        } else {
+            println("bool is false or null")
+        }
+    }
+
+    @Test
+    fun swapping_two_vars() {
+        var a = 1
+        var b = 2
+        a = b.also { b = a }
+        println("a: $a | b: $b")
     }
 }
