@@ -6,6 +6,10 @@ https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip
 
 Kotlin: requires Maven 3.x
 
+Kotlin Koans (Learning Kotlin):
+https://play.kotlinlang.org/koans/overview
+https://www.jetbrains.com/help/education/learner-start-guide.html
+
 > Lombok
 https://projectlombok.org
 https://projectlombok.org/setup/maven
