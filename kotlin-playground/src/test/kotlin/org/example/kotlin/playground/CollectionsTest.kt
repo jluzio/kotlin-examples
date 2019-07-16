@@ -61,4 +61,11 @@ class CollectionsTest {
         }
         println("eq: ${list1 == list2}")
     }
+
+    @Test
+    fun flatmap_test() {
+        val strList = listOf("abc", "def")
+        val charList = strList.flatMap { it.toList() }
+        println(charList)
+    }
 }
