@@ -3,6 +3,7 @@ package org.example.kotlin.playground
 import org.junit.Assert
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired
+import javax.inject.Inject
 
 const val SUBSYSTEM_DEPRECATED: String = "This subsystem is deprecated"
 
@@ -55,7 +56,8 @@ class PropertiesAndFieldsTest {
                 private set // the setter is private and has the default implementation
 
             var setterWithAnnotation: Any? = null
-                @Autowired set // annotate the setter with Inject
+                //@Autowired
+                @Inject set // annotate the setter with Inject
 
             fun test() {
                 setterVisibility = "cba"
