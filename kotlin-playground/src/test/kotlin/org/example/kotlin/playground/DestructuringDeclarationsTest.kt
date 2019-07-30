@@ -1,5 +1,6 @@
 package org.example.kotlin.playground
 
+import org.junit.Assert
 import org.junit.Test
 
 class DestructuringDeclarationsTest {
@@ -35,5 +36,20 @@ class DestructuringDeclarationsTest {
         }
 
         map.mapValues {  }
+    }
+
+    @Test
+    fun destructuring_list() {
+        var list = listOf(1, 2, 3)
+
+        val (v1, v2, v3) = list
+        println("values: $v1, $v2, $v3")
+
+        try {
+            val (v1, v2, v3, v4) = list
+            println("values: $v1, $v2, $v3, $v4")
+            Assert.fail("expecting IndexOutOfBounds type exception")
+        } catch (e: Exception) {
+        }
     }
 }

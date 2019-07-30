@@ -62,6 +62,12 @@ class BasicSyntaxTest {
         val intList: List<Int> = nullableList.filterNotNull()
         log("filtered non null list $intList")
         log("filtered non null list ${nullableList.filter { v -> v != null }}")
+
+        val nullVal: String? = null
+        val nullEqX = nullVal == "x"
+        val xEqX = "x" == "x"
+        println("null eq x : $nullEqX")
+        println("x eq x : $xEqX")
     }
 
     @Test
