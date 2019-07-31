@@ -76,6 +76,21 @@ class BasicSyntaxTest {
     }
 
     @Test
+    fun assign_if_null() {
+        var someVar: String? = null
+        someVar = someVar ?: "test-1"
+        someVar = someVar ?: "test-2"
+        println("someVar: $someVar")
+
+        data class Foo(var someVar: String? = null)
+        var foo = Foo()
+        foo.someVar = foo.someVar ?: "test-1"
+        foo.someVar = foo.someVar ?: "test-2"
+        println("foo.someVar: ${foo.someVar}")
+
+    }
+
+    @Test
     fun typeChecks_automaticCasts() {
         fun objLen1(obj: Any?): Int {
             if (obj is String) {

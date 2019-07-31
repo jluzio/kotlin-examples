@@ -15,4 +15,5 @@ class MiscTest {
     fun declare_exception() {
         throw IllegalArgumentException("test")
     }
+
 }
