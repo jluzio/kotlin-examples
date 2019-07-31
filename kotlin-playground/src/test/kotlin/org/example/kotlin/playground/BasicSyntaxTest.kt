@@ -64,10 +64,15 @@ class BasicSyntaxTest {
         log("filtered non null list ${nullableList.filter { v -> v != null }}")
 
         val nullVal: String? = null
+        val nonNullVal: String? = "stuff"
         val nullEqX = nullVal == "x"
         val xEqX = "x" == "x"
         println("null eq x : $nullEqX")
         println("x eq x : $xEqX")
+
+        println("-- run test --")
+        nullVal?.run { println("nullVal") }
+        nonNullVal?.run { println("nonNullVal") }
     }
 
     @Test
