@@ -68,4 +68,14 @@ class CollectionsTest {
         val charList = strList.flatMap { it.toList() }
         println(charList)
     }
+
+    @Test
+    fun associateBy_test() {
+        val list = listOf(1, 2, 3)
+        val map = list.associateByTo(mutableMapOf<Long, String>(), { it.toLong() }, { "val: $it" })
+        println(map)
+        val map2 = list.associateWithTo(mutableMapOf<Int, String>(),  { "val: $it" })
+        println(map2)
+    }
+
 }
