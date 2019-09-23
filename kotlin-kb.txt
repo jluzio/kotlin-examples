@@ -4,6 +4,10 @@ https://kotlinlang.org/docs/reference/using-maven.html
 https://github.com/JetBrains/kotlin-examples
 https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip
 
+Courses:
+https://codelabs.developers.google.com/kotlin-bootcamp/
+https://codelabs.developers.google.com/android-kotlin-fundamentals/
+
 Kotlin: requires Maven 3.x
 
 Kotlin Koans (Learning Kotlin):
