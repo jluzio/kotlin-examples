@@ -21,3 +21,10 @@ https://projectlombok.org/setup/maven
 https://projectlombok.org/setup/gradle
 https://projectlombok.org/setup/eclipse
 https://projectlombok.org/setup/intellij
+
+> Known issues
+- Compile-time constants not correctly recognized by IntelliJ IDE (but compiles fine)
+https://youtrack.jetbrains.com/issue/KT-34081
+- Eclipse Kotlin Plugin
+ > 'Kotlin Analysis: lateinit property trace has not been initialized
+ Interface defined in KT generates this error if used in Java class as a parameter on a method for ex
