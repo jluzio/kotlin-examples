@@ -22,6 +22,10 @@ https://projectlombok.org/setup/gradle
 https://projectlombok.org/setup/eclipse
 https://projectlombok.org/setup/intellij
 
+> Kotlin REPL
+Kotlin REPL stands for Read- Eval- Print- Loop
+Tools -> Kotlin -> Kotlin REPL
+
 > Known issues
 - Compile-time constants not correctly recognized by IntelliJ IDE (but compiles fine)
 https://youtrack.jetbrains.com/issue/KT-34081

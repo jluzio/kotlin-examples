@@ -1,0 +1,2 @@
+Kotlin REPL stands for Read- Eval- Print- Loop
+Tools -> Kotlin -> Kotlin REPL
