@@ -1,31 +1,28 @@
+https://docs.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance
+https://kotlinlang.org/docs/reference/generics.html
 https://kotlinlang.org/docs/tutorials/kotlin-for-py/generics.html
 
 --- Covariance ---
-- "T and supertypes"
-- Generic<Subtype> treated as Generic<Supertype>
-- "move up of type tree"
+- Generic<Subtype> can be assigned to Generic<Supertype>
 - keyword: out
+- example: List<String> can be assigned to List<Object> (needs List define T as covariant)
+- example Java:
+List<String> sValues = null;
+List<? extends Object> oValues = sValues;
 
 --- Contravariance ---
-- "T and subtypes"
-- Generic<Supertype> treated as Generic<Subtype>
-- "move down of type tree"
+- Generic<Supertype> can be assigned to Generic<Subtype>
 - keyword: in
+- example: Comparator<Object> can be assigned to Comparator<String> (needs Comparator define T as contravariant)
+- example Java:
+Comparator<Object> cObj = null;
+Comparator<? super String> cStr = cObj;
 
---- Declaration ---
-- class declaration
--- out T --
-- is Covariance
-- in (public) function methods only when in result (no input param)
-
--- in T --
-- is Contravariance
-- used in context of parameters only (no returns)
-- widen to subtypes of T, as some kind of generic library
-
---- Site ---
-- only in functions
-- type projections
-- project parameter using out or in
-- in translates to List<? extends Car>
-- out translates to List<? supper Car>
+-- Declarative Variance --
+When using on class there are some restrictions:
+-- Covariance --
+- keyword: out
+- when type is used on public methods, it can only be on out position (return)
+-- Contravariance --
+- keyword: in
+- when type is used on public methods, it can only be on in position (parameters)
