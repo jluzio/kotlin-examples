@@ -1,4 +1,4 @@
-package org.example.kotlin.playground.testing
+package org.example.kotlin.core.test
 
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
@@ -10,14 +10,17 @@ class MockTest {
     open class Hello() {
         open fun sayHello(target: String) = "Hello $target!"
     }
+
     @Mockable
     class FinalHello() {
         fun sayHello(target: String) = "Hello $target!"
     }
+
     @MockableV2
     class FinalHello2() {
         fun sayHello(target: String) = "Hello $target!"
     }
+
     @Component
     class ComponentHello() {
         fun sayHello(target: String) = "Hello $target!"
