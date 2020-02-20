@@ -27,6 +27,9 @@ Kotlin REPL stands for Read- Eval- Print- Loop
 Tools -> Kotlin -> Kotlin REPL
 NOTE: REPL includes all module classes
 
+> Kotlin Compiler Plugins
+https://kotlinlang.org/docs/reference/compiler-plugins.html
+
 > Generics (covariance/contravariance)
 https://kotlinlang.org/docs/reference/generics.html
 --- Covariance ---
