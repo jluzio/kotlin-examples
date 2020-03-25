@@ -4,6 +4,12 @@ https://kotlinlang.org/docs/reference/using-maven.html
 https://github.com/JetBrains/kotlin-examples
 https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip
 
+> Eclipse Plugin
+Marketplace or update site
+https://dl.bintray.com/jetbrains/kotlin/eclipse-plugin/last/
+- Last working@2020-03-25
+https://dl.bintray.com/jetbrains/kotlin/eclipse-plugin/0.8.19/
+
 -- To Read --
 Courses:
 https://codelabs.developers.google.com/kotlin-bootcamp/
