@@ -3,7 +3,7 @@ package org.example.kotlin.playground
 import org.junit.jupiter.api.Test
 
 
-class LambdasTest {
+class LambdaTest {
 
   @Test
   fun representations() {
