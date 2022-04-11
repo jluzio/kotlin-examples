@@ -19,7 +19,7 @@ class MiscTest {
     val method = this::declare_exception.javaMethod
     val exceptions = method!!.exceptionTypes.toList()
     assertThat(exceptions)
-        .contains(IllegalArgumentException::class.java, UnsupportedOperationException::class.java)
+      .contains(IllegalArgumentException::class.java, UnsupportedOperationException::class.java)
     log.debug(exceptions.toString())
   }
 

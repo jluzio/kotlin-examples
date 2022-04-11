@@ -127,13 +127,13 @@ class BasicSyntaxTest {
   @Test
   fun while_test() {
     fun describe(obj: Any): String =
-        when (obj) {
-          1 -> "One"
-          "Hello" -> "Greeting"
-          is Long -> "Long"
-          !is String -> "Not a string"
-          else -> "Unknown"
-        }
+      when (obj) {
+        1 -> "One"
+        "Hello" -> "Greeting"
+        is Long -> "Long"
+        !is String -> "Not a string"
+        else -> "Unknown"
+      }
     log("describe1: ${describe("Hello")}")
     log("describe2: ${describe("asd")}")
     log("describe3: ${describe(13)}")
@@ -182,10 +182,10 @@ class BasicSyntaxTest {
 
     val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
     fruits
-        .filter { it.startsWith("a") }
-        .sortedBy { it }
-        .map { it.toUpperCase() }
-        .forEach { println(it) }
+      .filter { it.startsWith("a") }
+      .sortedBy { it }
+      .map { it.toUpperCase() }
+      .forEach { println(it) }
   }
 
 }

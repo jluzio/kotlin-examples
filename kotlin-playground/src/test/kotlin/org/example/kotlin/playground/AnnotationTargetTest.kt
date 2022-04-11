@@ -21,7 +21,7 @@ class AnnotationTargetTest {
     val annotations = bean::value.getter.annotations
     println(annotations)
     assertThat(annotations[0] is MethodAnnotation)
-        .isTrue()
+      .isTrue()
   }
 
 }

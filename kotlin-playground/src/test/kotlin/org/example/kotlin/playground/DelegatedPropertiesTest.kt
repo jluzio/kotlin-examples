@@ -65,10 +65,12 @@ class DelegatedPropertiesTest {
       val age: Int by map
     }
 
-    val immutableUser = ImmutableUser(mapOf(
+    val immutableUser = ImmutableUser(
+      mapOf(
         "name" to "John Doe",
         "age" to 25
-    ))
+      )
+    )
     println(immutableUser.name)
     println(immutableUser.age)
 
@@ -78,10 +80,12 @@ class DelegatedPropertiesTest {
       val age: Int by map
     }
 
-    val mutableUser = MutableUser(mutableMapOf(
+    val mutableUser = MutableUser(
+      mutableMapOf(
         "name" to "John Doe",
         "age" to 25
-    ))
+      )
+    )
     println(mutableUser.name)
     println(mutableUser.age)
     // mutableUser.name = "test"

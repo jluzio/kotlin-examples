@@ -30,7 +30,7 @@ class DelegationTest {
 
   // Tom Araya is the "singer" of Slayer
   class TomAraya(n: String) : SoundBehavior by ScreamBehavior(n),
-      JumpBehavior by AirGuitarJumpBehavior()
+    JumpBehavior by AirGuitarJumpBehavior()
 
   // You should know ;)
   class ElvisPresley(n: String) : SoundBehavior by RockAndRollBehavior(n)              // 3

@@ -10,23 +10,24 @@ class RegexTest {
 
   @Test
   fun test() {
-    val header = { pattern: String, separator: String->
-      log.debug("{} {} {}", Strings.repeat(separator, 40), pattern, Strings.repeat(separator, 40))}
+    val header = { pattern: String, separator: String ->
+      log.debug("{} {} {}", Strings.repeat(separator, 40), pattern, Strings.repeat(separator, 40))
+    }
 
     val patterns = listOf(
-        """^[\w\s-]+$""",
-        """^\p{L}+$""",
-        """^[\p{L} -\.:]+$""",
+      """^[\w\s-]+$""",
+      """^\p{L}+$""",
+      """^[\p{L} -\.:]+$""",
     )
-        .map { it.toRegex() }
+      .map { it.toRegex() }
     val values = listOf(
-        "john",
-        "John",
-        "José",
-        "John Doe",
-        "José Doe",
-        "José Doe - Mr",
-        "/john/i",
+      "john",
+      "John",
+      "José",
+      "John Doe",
+      "José Doe",
+      "José Doe - Mr",
+      "/john/i",
     )
 
     patterns.forEach { pattern ->
