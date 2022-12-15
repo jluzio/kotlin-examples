@@ -2,11 +2,9 @@ package org.example.kotlin.playground
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import java.lang.annotation.Documented
 
 class AnnotationTargetTest {
 
-  @Documented
   @Retention(AnnotationRetention.RUNTIME)
   @Target(AnnotationTarget.PROPERTY_GETTER)
   annotation class MethodAnnotation()

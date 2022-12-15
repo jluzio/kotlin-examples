@@ -1,5 +1,6 @@
 package org.example.kotlin.playground
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 
@@ -9,8 +10,8 @@ class BasicTypesTest {
   fun literal_constants() {
     val dec = 123
     val long = 123L
-    val number_underscore_readable = 1_000_000
-    println(number_underscore_readable)
+    val numberUnderscoreReadable = 1_000_000
+    println("#dec | $long | $numberUnderscoreReadable")
   }
 
   @Test
@@ -22,10 +23,11 @@ class BasicTypesTest {
     * is same object
     */
     val a: Int = 10000
-    println(a === a) // Prints 'true'
+    // note: deprecated
+//    assertThat(a === 10000).isTrue // Prints 'true'
     val boxedA: Int? = a
     val anotherBoxedA: Int? = a
-    println(boxedA === anotherBoxedA) // !!!Prints 'false'!!!
+    assertThat(boxedA === anotherBoxedA).isFalse // !!!Prints 'false'!!!
   }
 
   @Test
@@ -37,10 +39,10 @@ class BasicTypesTest {
     * a?.equals(b) ?: (b === null)
     */
     val a: Int = 10000
-    println(a == a) // Prints 'true'
+    assertThat(a == 10000).isTrue // Prints 'true'
     val boxedA: Int? = a
     val anotherBoxedA: Int? = a
-    println(boxedA == anotherBoxedA) // Prints 'true'
+    assertThat(boxedA == anotherBoxedA).isTrue // Prints 'true'
   }
 
   @Test
@@ -48,6 +50,6 @@ class BasicTypesTest {
     val i: Int? = 1
     val l1: Long? = 1
     val l2: Long? = i?.toLong()
-    println(l1 == l2)
+    assertThat(l1 == l2).isTrue
   }
 }

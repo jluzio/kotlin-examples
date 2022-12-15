@@ -1,7 +1,11 @@
 package org.example.kotlin.playground
 
+import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.fail
+import java.lang.IndexOutOfBoundsException
 
 
 class DestructuringDeclarationsTest {
@@ -44,14 +48,14 @@ class DestructuringDeclarationsTest {
   fun destructuring_list() {
     var list = listOf(1, 2, 3)
 
-    val (v1, v2, v3) = list
-    println("values: $v1, $v2, $v3")
+    assertDoesNotThrow {
+      val (v1, v2, v3) = list
+      println("values: $v1, $v2, $v3")
+    }
 
-    try {
+    assertThatThrownBy {
       val (v1, v2, v3, v4) = list
       println("values: $v1, $v2, $v3, $v4")
-      fail("expecting IndexOutOfBounds type exception")
-    } catch (e: Exception) {
-    }
+    }.isInstanceOf(IndexOutOfBoundsException::class.java)
   }
 }

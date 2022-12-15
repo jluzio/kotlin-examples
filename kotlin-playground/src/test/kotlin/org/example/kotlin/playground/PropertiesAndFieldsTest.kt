@@ -2,7 +2,7 @@ package org.example.kotlin.playground
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.fail
-import javax.inject.Inject
+import jakarta.inject.Inject
 
 const val SUBSYSTEM_DEPRECATED: String = "This subsystem is deprecated"
 

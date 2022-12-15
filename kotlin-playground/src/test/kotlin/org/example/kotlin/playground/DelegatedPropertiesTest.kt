@@ -46,7 +46,7 @@ class DelegatedPropertiesTest {
   fun observable() {
     class User {
 
-      var name: String by Delegates.observable("<no name>") { prop, old, new ->
+      var name: String by Delegates.observable("<no name>") { _, old, new ->
         println("$old -> $new")
       }
     }

@@ -9,7 +9,7 @@ class DelegationTest {
   }
 
   class ScreamBehavior(val n: String) : SoundBehavior {                                // 2
-    override fun makeSound() = println("${n.toUpperCase()} !!!")
+    override fun makeSound() = println("${n.uppercase()} !!!")
   }
 
   class RockAndRollBehavior(val n: String) : SoundBehavior {                           // 2
