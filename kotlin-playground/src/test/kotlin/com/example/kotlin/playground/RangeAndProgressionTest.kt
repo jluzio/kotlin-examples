@@ -1,24 +1,29 @@
 package com.example.kotlin.playground
 
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
 
 class RangeAndProgressionTest {
 
+  // Experimental (1.8.0): ..<
+  @OptIn(ExperimentalStdlibApi::class)
   @Test
   fun range() {
     println("..")
-    for (i in 1..5) println(i)
+    assertThat((1..5).toList()).contains(1, 2, 3, 4, 5)
+    println("..<")
+    assertThat((1..< 5).toList()).contains(1, 2, 3, 4)
     println(".. step")
-    for (i in 1..5 step 2) println(i)
+    assertThat((1..5 step 2).toList()).contains(1, 3, 5)
     println("until")
-    for (i in 1 until 5) println(i)
+    assertThat((1 until 5).toList()).contains(1, 2, 3, 4)
     println("downTo")
-    for (i in 5 downTo 1) println(i)
+    assertThat((5 downTo 1).toList()).contains(5, 4, 3, 2, 1)
 
     println("conditions")
-    println(3 in 1..5)
-    println(3 !in 1..5)
+    assertThat(3 in 1..5).isTrue
+    assertThat(3 !in 1..5).isFalse
   }
 
   @Test
