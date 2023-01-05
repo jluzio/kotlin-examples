@@ -8,7 +8,7 @@ plugins {
 	kotlin("plugin.spring") version "1.7.22"
 }
 
-group = "org.example.kotlin"
+group = "com.example.kotlin"
 version = "1.0"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -47,7 +47,7 @@ tasks.withType<Test> {
 }
 
 allOpen {
-	annotation("org.example.kotlin.playground.compiler.KotlinAllOpen")
-	annotation("org.example.kotlin.playground.testing.MockableV2")
+	annotation("com.example.kotlin.playground.compiler.KotlinAllOpen")
+	annotation("com.example.kotlin.playground.testing.MockableV2")
 	// annotations("com.another.Annotation", "com.third.Annotation")
 }
