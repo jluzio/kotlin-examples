@@ -1,4 +1,4 @@
-package com.example.kotlin.maven.playground.kotlin
+package com.example.kotlin.maven.playground
 
 import com.example.kotlin.maven.playground.java.model.SomeAnnotation
 import com.example.kotlin.maven.playground.model.CONST_VAL

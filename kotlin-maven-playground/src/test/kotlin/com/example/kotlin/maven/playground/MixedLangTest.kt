@@ -1,4 +1,4 @@
-package com.example.kotlin.maven.playground.kotlin
+package com.example.kotlin.maven.playground
 
 import com.example.kotlin.maven.playground.model.BarBean
 import org.junit.jupiter.api.Test
