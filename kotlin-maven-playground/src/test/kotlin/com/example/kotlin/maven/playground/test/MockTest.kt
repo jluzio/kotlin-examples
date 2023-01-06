@@ -1,10 +1,9 @@
-package com.example.kotlin.playground.testing
+package com.example.kotlin.maven.playground.test
 
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
-import org.mockito.kotlin.whenever
 import org.springframework.stereotype.Component
 
 class MockTest {
@@ -46,10 +45,9 @@ class MockTest {
     }
     println(mock.sayHello("world"))
 
-    val mock2 = mock<FinalHello2> {
+    val mock2 = mock<FinalHello> {
       on { sayHello(any()) } doReturn "Bamboozled"
     }
-    whenever(mock2.sayHello(any())).thenReturn("Bamboozled")
     println(mock2.sayHello("world"))
   }
 
