@@ -6,6 +6,10 @@ plugins {
 //	id("org.jetbrains.kotlin.plugin.allopen") version "1.8.10"
 	kotlin("jvm") version "1.8.10"
 	kotlin("plugin.spring") version "1.8.10"
+
+	// Lombok
+	id("io.freefair.lombok") version "8.0.1"
+	kotlin("plugin.lombok") version "1.8.10"
 }
 
 group = "com.example.kotlin"
