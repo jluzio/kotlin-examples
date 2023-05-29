@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.0.5"
+	id("org.springframework.boot") version "3.1.0"
 	id("io.spring.dependency-management") version "1.1.0"
 //	id("org.jetbrains.kotlin.plugin.allopen") version "1.8.20"
-	kotlin("jvm") version "1.8.20"
-	kotlin("plugin.spring") version "1.8.20"
+	kotlin("jvm") version "1.8.21"
+	kotlin("plugin.spring") version "1.8.21"
 }
 
 group = "com.example.kotlin"
@@ -28,7 +28,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
-	implementation("com.google.guava:guava:31.1-jre")
+	implementation("com.google.guava:guava:32.0.0-jre")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.mockito:mockito-core:4.11.0")
