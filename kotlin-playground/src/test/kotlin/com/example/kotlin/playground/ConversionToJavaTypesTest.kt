@@ -1,14 +1,17 @@
 package com.example.kotlin.playground
 
+import com.example.kotlin.playground.helper.LogDelegate
+import com.example.kotlin.playground.java.JavaData
 import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 
 class ConversionToJavaTypesTest {
 
+  val log by LogDelegate()
 
   @Test
-  fun test() {
+  fun lists() {
     val kotlinList = listOf("1", "2", "3")
 
     val immutableJavaList = kotlinList as java.util.List<String>
@@ -22,6 +25,21 @@ class ConversionToJavaTypesTest {
       .isEqualTo(java.util.List.of("1", "2", "3"))
     assertThatCode { mutableJavaList.add("4") }
       .doesNotThrowAnyException()
+  }
+
+  @Test
+  fun javaInteraction() {
+    val javaData = JavaData.builder()
+      .stringList(listOf("1", "2"))
+      .stringArray(arrayOf("1", "2"))
+      .build()
+    log.info("javaData: $javaData")
+    log.info("stringList.class: ${javaData.stringList.javaClass}")
+    log.info("stringArray.class: ${javaData.stringArray.javaClass}")
+    assertThatThrownBy { javaData.stringList.add("3") }
+      .isInstanceOf(UnsupportedOperationException::class.java)
+    assertThat(javaData.stringArray)
+      .isInstanceOf(Array<String>::class.java)
   }
 
 }

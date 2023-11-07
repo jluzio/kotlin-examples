@@ -12,7 +12,7 @@ class KotlinV1_4_0 {
       "2",
       "3",
     )
-    assertThat(values).contains("1", "2", "3");
+    assertThat(values).contains("1", "2", "3")
   }
 
   @Test

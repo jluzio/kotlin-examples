@@ -1,4 +1,4 @@
-package javatest;
+package com.example.kotlin.playground.java;
 
 import lombok.extern.slf4j.Slf4j;
 
