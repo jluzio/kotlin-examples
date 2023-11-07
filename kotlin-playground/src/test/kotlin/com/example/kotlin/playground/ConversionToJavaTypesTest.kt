@@ -36,10 +36,16 @@ class ConversionToJavaTypesTest {
     log.info("javaData: $javaData")
     log.info("stringList.class: ${javaData.stringList.javaClass}")
     log.info("stringArray.class: ${javaData.stringArray.javaClass}")
+
     assertThatThrownBy { javaData.stringList.add("3") }
       .isInstanceOf(UnsupportedOperationException::class.java)
     assertThat(javaData.stringArray)
       .isInstanceOf(Array<String>::class.java)
+
+    assertThat(javaData.equalsToStringArray(*arrayOf("1")))
+      .isFalse()
+    assertThat(javaData.equalsToStringArray(*arrayOf("1", "2")))
+      .isTrue()
   }
 
 }
