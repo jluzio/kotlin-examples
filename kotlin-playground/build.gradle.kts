@@ -1,20 +1,20 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.1.5"
-	id("io.spring.dependency-management") version "1.1.3"
-//	id("org.jetbrains.kotlin.plugin.allopen") version "1.9.20"
-	kotlin("jvm") version "1.9.20"
-	kotlin("plugin.spring") version "1.9.20"
+	id("org.springframework.boot") version "3.2.2"
+	id("io.spring.dependency-management") version "1.1.4"
+//	id("org.jetbrains.kotlin.plugin.allopen") version "1.9.22"
+	kotlin("jvm") version "1.9.22"
+	kotlin("plugin.spring") version "1.9.22"
 
 	// Lombok
 	id("io.freefair.lombok") version "8.4"
-	kotlin("plugin.lombok") version "1.9.20"
+	kotlin("plugin.lombok") version "1.9.22"
 }
 
 group = "com.example.kotlin"
 version = "1.0"
-java.sourceCompatibility = JavaVersion.VERSION_20
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 configurations {
 	compileOnly {
@@ -33,16 +33,16 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-test")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
-	implementation("com.google.guava:guava:32.1.3-jre")
+	implementation("com.google.guava:guava:33.0.0-jre")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
 }
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "20"
+		jvmTarget = "21"
 	}
 }
 
