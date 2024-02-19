@@ -27,10 +27,18 @@ repositories {
 }
 
 dependencies {
+	val kotlinxHtmlVersion = "0.11.0"
+
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
 	implementation("org.jetbrains.kotlin:kotlin-test")
+	// include for JVM target
+	implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:$kotlinxHtmlVersion")
+	// include for JS target
+//	implementation("org.jetbrains.kotlinx:kotlinx-html-js:$kotlinxHtmlVersion")
+	// include for Common module
+	implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinxHtmlVersion")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
 	implementation("com.google.guava:guava:33.0.0-jre")
