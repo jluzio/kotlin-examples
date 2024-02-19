@@ -13,10 +13,14 @@ class SerializationTest {
 
   @Test
   fun testBasic() {
-    val json = Json.encodeToString(Data(42, "str"))
+    val data = Data(42, "str")
+    val json = Json.encodeToString(data)
     assertThat(json)
       .isEqualTo("""
         {"a":42,"b":"str"}
       """.trimIndent())
+
+    val decodedData = Json.decodeFromString<Data>(json)
+    assertThat(decodedData).isEqualTo(data)
   }
 }
