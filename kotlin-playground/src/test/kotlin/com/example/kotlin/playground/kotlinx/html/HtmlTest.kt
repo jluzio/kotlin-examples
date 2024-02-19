@@ -1,8 +1,8 @@
-package com.example.kotlin.playground.kotlinx
+package com.example.kotlin.playground.kotlinx.html
 
 import kotlinx.html.*
 import kotlinx.html.stream.appendHTML
-import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 
 class HtmlTest {
@@ -16,7 +16,7 @@ class HtmlTest {
       }
     }
 
-    assertThat(html)
+    Assertions.assertThat(html)
       .isEqualTo("""
         <div id="test">Hello world!</div>
         """.trimIndent())
@@ -39,7 +39,7 @@ class HtmlTest {
 
     }.trimIndent()
 
-    assertThat(html)
+    Assertions.assertThat(html)
       .isEqualTo("""
         <html>
           <body>
