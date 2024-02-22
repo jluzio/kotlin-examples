@@ -1,6 +1,6 @@
 package com.example.kotlin.playground.testing
 
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 /**
@@ -8,9 +8,12 @@ import kotlin.test.assertEquals
  */
 class AssertTest {
 
+  val testSample = BasicTestSample()
+
   @Test
   fun test() {
-    assertEquals("1", "1")
+    val expected = 42
+    assertEquals(expected, testSample.sum(40, 2))
   }
 
 }

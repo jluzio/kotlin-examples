@@ -49,8 +49,11 @@ dependencies {
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
 	implementation("com.google.guava:guava:33.0.0-jre")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
+	testImplementation("io.strikt:strikt-jvm:0.34.1")
 }
 
 tasks.withType<KotlinCompile> {

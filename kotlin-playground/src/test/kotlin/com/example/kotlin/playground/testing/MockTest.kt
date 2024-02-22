@@ -1,11 +1,11 @@
 package com.example.kotlin.playground.testing
 
-import org.junit.jupiter.api.Test
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import org.springframework.stereotype.Component
+import kotlin.test.Test
 
 class MockTest {
   open class Hello() {
