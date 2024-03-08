@@ -1,15 +1,15 @@
 package com.example.kotlin.playground.kotlinx.coroutines
 
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import strikt.api.expectThat
 import strikt.assertions.containsExactly
 import strikt.assertions.isEqualTo
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
+/**
+ * NOTE: activate -Dkotlinx.coroutines.debug to view coroutines in logs
+ */
 class CoroutinesTest {
 
   @Test
@@ -28,6 +28,8 @@ class CoroutinesTest {
    * for the duration of the call, until all the coroutines inside runBlocking { ... } complete their execution.
    */
   fun simpleRunBlocking(data: MutableList<String>) = runBlocking { // this: CoroutineScope
+    // launch has parameters and returns a job
+    // e.g.: launch(Dispatchers.Default) {
     launch { // launch a new coroutine and continue
       smallDelay()
       data += "World!" // print after delay
@@ -112,6 +114,9 @@ class CoroutinesTest {
       .containsExactly("Hello", "World!", "Done")
   }
 
+  /**
+   * NOTE: activate -Dkotlinx.coroutines.debug to view coroutines in logs
+   */
   @Test
   fun coroutines_are_lightweight() {
     var data = ""
@@ -125,5 +130,25 @@ class CoroutinesTest {
     }
     expectThat(data)
       .isEqualTo(".".repeat(50_000))
+  }
+
+  @Test
+  fun deferred_example() {
+    runBlocking {
+      // async has parameters and returns a Deferred value
+      // e.g.: val deferred: Deferred<Int> = async(Dispatchers.Default) {
+      val deferred: Deferred<Int> = async {
+        loadData()
+      }
+      println("waiting...")
+      expectThat(deferred.await())
+        .isEqualTo(42)
+    }
+  }
+  suspend fun loadData(): Int {
+    println("loading...")
+    delay(200L)
+    println("loaded!")
+    return 42
   }
 }
