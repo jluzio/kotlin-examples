@@ -37,9 +37,9 @@ dependencies {
 
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm")
-	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j")
 	testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
+	testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug")
 
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm")
 
