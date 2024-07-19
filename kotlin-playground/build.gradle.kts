@@ -3,14 +3,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "3.3.2"
 	id("io.spring.dependency-management") version "1.1.6"
-//	id("org.jetbrains.kotlin.plugin.allopen") version "1.9.22"
-	kotlin("jvm") version "1.9.22"
-	kotlin("plugin.spring") version "1.9.22"
-	kotlin("plugin.serialization") version "1.9.22"
+//	id("org.jetbrains.kotlin.plugin.allopen") version "2.0.0"
+	kotlin("jvm") version "2.0.0"
+	kotlin("plugin.spring") version "2.0.0"
+	kotlin("plugin.serialization") version "2.0.0"
 
 	// Lombok
 	id("io.freefair.lombok") version "8.4"
-	kotlin("plugin.lombok") version "1.9.22"
+	kotlin("plugin.lombok") version "2.0.0"
 }
 
 group = "com.example.kotlin"
