@@ -1,16 +1,16 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.3.2"
-	id("io.spring.dependency-management") version "1.1.6"
-//	id("org.jetbrains.kotlin.plugin.allopen") version "2.0.0"
-	kotlin("jvm") version "2.0.0"
-	kotlin("plugin.spring") version "2.0.0"
-	kotlin("plugin.serialization") version "2.0.0"
+	id("org.springframework.boot") version "3.4.2"
+	id("io.spring.dependency-management") version "1.1.7"
+//	id("org.jetbrains.kotlin.plugin.allopen") version "2.1.10"
+	kotlin("jvm") version "2.1.10"
+	kotlin("plugin.spring") version "2.1.10"
+	kotlin("plugin.serialization") version "2.1.10"
 
 	// Lombok
-	id("io.freefair.lombok") version "8.4"
-	kotlin("plugin.lombok") version "2.0.0"
+	id("io.freefair.lombok") version "8.12.1"
+	kotlin("plugin.lombok") version "2.1.10"
 }
 
 group = "com.example.kotlin"
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-	val kotlinxHtmlVersion = "0.11.0"
+	val kotlinxHtmlVersion = "0.12.0"
 
 	implementation("org.springframework.boot:spring-boot-starter")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -52,19 +52,18 @@ dependencies {
 
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
-	implementation("com.google.guava:guava:33.0.0-jre")
+	implementation("com.google.guava:guava:33.4.0-jre")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
-	testImplementation("io.kotest:kotest-runner-junit5:5.8.0")
-	testImplementation("io.strikt:strikt-jvm:0.34.1")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
+	testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+	testImplementation("io.strikt:strikt-jvm:0.35.1")
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "21"
+kotlin {
+	compilerOptions {
+		freeCompilerArgs.addAll("-Xjsr305=strict")
 	}
 }
 
