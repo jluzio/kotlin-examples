@@ -1,25 +1,24 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "3.4.2"
+
+	id("org.springframework.boot") version "4.0.2"
 	id("io.spring.dependency-management") version "1.1.7"
-//	id("org.jetbrains.kotlin.plugin.allopen") version "2.1.10"
-	kotlin("jvm") version "2.1.10"
-	kotlin("plugin.spring") version "2.1.10"
-	kotlin("plugin.serialization") version "2.1.10"
+//	id("org.jetbrains.kotlin.plugin.allopen") version "2.4.0"
+	kotlin("jvm") version "2.4.0"
+	kotlin("plugin.spring") version "2.4.0"
+	kotlin("plugin.serialization") version "2.4.0"
 
 	// Lombok
-	id("io.freefair.lombok") version "8.12.1"
-	kotlin("plugin.lombok") version "2.1.10"
+	id("io.freefair.lombok") version "9.5.0"
+	kotlin("plugin.lombok") version "2.4.0"
 }
 
 group = "com.example.kotlin"
 version = "1.0"
-java.sourceCompatibility = JavaVersion.VERSION_21
 
-configurations {
-	compileOnly {
-		extendsFrom(configurations.annotationProcessor.get())
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
 	}
 }
 
@@ -52,18 +51,18 @@ dependencies {
 
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
-	implementation("com.google.guava:guava:33.4.0-jre")
+	implementation("com.google.guava:guava:33.6.0-jre")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
-	testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+	testImplementation("org.mockito.kotlin:mockito-kotlin:6.3.0")
+	testImplementation("io.kotest:kotest-runner-junit5:6.2.0")
 	testImplementation("io.strikt:strikt-jvm:0.35.1")
 }
 
 kotlin {
 	compilerOptions {
-		freeCompilerArgs.addAll("-Xjsr305=strict")
+		freeCompilerArgs.addAll("-Xjsr305=strict", "-Xannotation-default-target=param-property")
 	}
 }
 
