@@ -1,6 +1,4 @@
-
 plugins {
-
 	id("org.springframework.boot") version "4.0.2"
 	id("io.spring.dependency-management") version "1.1.7"
 //	id("org.jetbrains.kotlin.plugin.allopen") version "2.4.0"
